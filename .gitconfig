@@ -1,0 +1,19 @@
+[user]
+	name = osgsm
+	email = 50955473+oshimax@users.noreply.github.com
+[core]
+	excludesfile = /Users/shogooshima/.gitignore_global
+[commit]
+	template = /Users/shogooshima/.stCommitMsg
+[alias]
+	ad = add -u
+	br = branch
+	cm = commit -m
+	l = log --pretty=oneline -n 20 --graph --abbrev-commit
+	ps = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
+	pl = "!git pull origin $(git rev-parse --abbrev-ref HEAD)"
+	rs = restore
+	rss = restore --staged
+	s = status -s
+	sw = switch
+	swc = switch -c

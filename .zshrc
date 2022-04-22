@@ -1,4 +1,4 @@
-export PS1='%~ %# '
+PS1='%~ %# '
 
 alias g=git
 

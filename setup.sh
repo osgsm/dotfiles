@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-DOT_FILES=(.zshrc .gitconfig .vimrc)
+DOT_FILES=(.zshrc .gitconfig .vimrc .tmux.conf .alacritty.yml)
 
 for file in ${DOT_FILES[@]}
 do

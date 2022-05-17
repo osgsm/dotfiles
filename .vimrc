@@ -1,24 +1,15 @@
-cnoremap <C-j> <ESC>
-inoremap <C-j> <ESC>
-vnoremap <C-j> <ESC>
+packadd! onedark.vim
 
 set clipboard=unnamed
 
-" Comments in Vimscript start with a `"`.
+if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
 
-" If you open this file in Vim, it'll be syntax highlighted for you.
-
-" Vim is based on Vi. Setting `nocompatible` switches from the default
-" Vi-compatibility mode and enables useful Vim functionality. This
-" configuration option turns out not to be necessary for the file named
-" '~/.vimrc', because Vim automatically enters nocompatible mode if that file
-" is present. But we're including it here just in case this config file is
-" loaded some other way (e.g. saved as `foo`, and then Vim started with
-" `vim -u foo`).
-set nocompatible
-
-" Turn on syntax highlighting.
 syntax on
+set termguicolors
+colorscheme onedark
 
 " Disable the default Vim startup message.
 set shortmess+=I

@@ -1,3 +1,5 @@
+eval "$(anyenv init -)"
+
 export EDITOR=vim
 PS1='%~ %# '
 

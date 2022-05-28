@@ -1,3 +1,5 @@
+language en_US
+
 packadd! onedark.vim
 
 set clipboard=unnamed

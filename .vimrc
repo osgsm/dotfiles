@@ -1,8 +1,7 @@
+" Change language
 language en_US
 
 packadd! onedark.vim
-
-set clipboard=unnamed
 
 if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -12,6 +11,17 @@ endif
 syntax on
 set termguicolors
 colorscheme onedark
+
+" Use spaces to insert a <Tab>
+set expandtab
+
+" Change numbers of spaces using <Tab> and indent
+set tabstop=2
+set softtabstop=-1
+set shiftwidth=0
+
+" Synchronize unnamed register with system clipboard
+set clipboard=unnamed
 
 " Disable the default Vim startup message.
 set shortmess+=I

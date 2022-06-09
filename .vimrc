@@ -29,6 +29,9 @@ set shortmess+=I
 " Show line numbers.
 set number
 
+" Key remap
+:map! <C-d> <Del>
+
 " This enables relative line numbering mode. With both number and
 " relativenumber enabled, the current line shows the true line number, while
 " all other lines (above and below) are numbered relative to the current line.

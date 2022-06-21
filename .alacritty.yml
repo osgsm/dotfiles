@@ -437,7 +437,7 @@ shell:
   args:
     - -l
     - -c
-    - "tmux attach || tmux && bindkey -v"
+    - "tmux attach || tmux"
 
 # Startup directory
 #

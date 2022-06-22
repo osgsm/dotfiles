@@ -30,8 +30,8 @@ set shortmess+=I
 set number
 
 " Key remap
-:noremap <CR> i<CR><ESC>
-:noremap! <C-d> <Del>
+nnoremap <CR> i<CR><ESC>
+noremap! <C-d> <Del>
 
 " This enables relative line numbering mode. With both number and
 " relativenumber enabled, the current line shows the true line number, while

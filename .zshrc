@@ -16,3 +16,6 @@ fi
 
 # zsh-autosuggestions
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# set vim key bind
+bindkey -v

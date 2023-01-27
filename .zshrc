@@ -1,10 +1,8 @@
 export EDITOR=vim
+
 PS1='%~ %# '
 
 alias g=git
-
-# anyenv
-eval "$(anyenv init -)"
 
 # zsh-completions
 if type brew &>/dev/null; then
@@ -19,3 +17,8 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # set vim key bind
 bindkey -v
+
+# n
+export N_PREFIX=$HOME/.n
+export PATH=$N_PREFIX/bin:$PATH
+

@@ -2,7 +2,51 @@ export EDITOR=vim
 
 PS1='%~ %# '
 
-alias g=git
+# Navigation aliases
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ~="cd ~"
+alias -- -="cd -"
+
+# Shortcuts
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias p="cd ~/Projects"
+alias g="git"
+
+# Yarn aliases
+alias y="yarn"
+alias yi="yarn init -y"
+alias ya="yarn add"
+alias yr="yarn remove"
+alias yad="yarn add -D"
+alias yga="yarn global add"
+alias ygr="yarn global remove"
+alias yu="yarn upgrade"
+alias ygu="yarn global upgrade"
+alias yl="yarn list --depth=0"
+alias ygl="yarn global list --depth=0"
+alias yo="yarn outdated"
+alias yd="yarn dev"
+alias yb="yarn build"
+alias ys="yarn start"
+
+# npm aliases
+alias ni="npm install"
+alias nid="npm install --save-dev"
+alias nig="npm install -g"
+alias nun="npm uninstall"
+alias nung="npm uninstall -g"
+alias nl="npm list --depth=0"
+alias nu="npm update"
+alias nug="npm update-g"
+alias no="npm outdated"
+alias nr="npm run"
+alias nrd="npm run dev"
+alias nrb="npm run build"
+alias nrs="npm run start"
 
 # zsh-completions
 if type brew &>/dev/null; then
@@ -13,7 +57,7 @@ if type brew &>/dev/null; then
 fi
 
 # zsh-autosuggestions
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # set vim key bind
 bindkey -v
@@ -22,3 +66,4 @@ bindkey -v
 export N_PREFIX=$HOME/.n
 export PATH=$N_PREFIX/bin:$PATH
 
+[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc

@@ -67,3 +67,6 @@ export N_PREFIX=$HOME/.n
 export PATH=$N_PREFIX/bin:$PATH
 
 [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
+
+# depot_tools
+export PATH=$HOME/Tools/depot_tools:$PATH

@@ -73,3 +73,10 @@ export PATH=$N_PREFIX/bin:$PATH
 
 # depot_tools
 export PATH=$HOME/Tools/depot_tools:$PATH
+
+# bun completions
+[ -s "/Users/osgsm/.bun/_bun" ] && source "/Users/osgsm/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

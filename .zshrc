@@ -16,6 +16,9 @@ alias dt="cd ~/Desktop"
 alias p="cd ~/Projects"
 alias g="git"
 
+# pnpm aliases
+alias pn="pnpm"
+
 # Yarn aliases
 alias y="yarn"
 alias yi="yarn init -y"

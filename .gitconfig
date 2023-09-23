@@ -2,10 +2,11 @@
 	name = osgsm
 	email = 50955473+osgsm@users.noreply.github.com
 [core]
-	excludesfile = /Users/shogooshima/.gitignore_global
+	excludesfile = /Users/osgsm/.gitignore_global
 [alias]
 	ad = add -u
 	br = branch
+	c = commit
 	cm = commit -m
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
 	ps = "!git push origin $(git rev-parse --abbrev-ref HEAD)"

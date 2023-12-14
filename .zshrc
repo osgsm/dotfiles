@@ -14,7 +14,7 @@ alias l='ls'
 # Aliases to protect against overwriting
 alias cp='cp -i'
 alias mv='mv -i'
-alias rm='rm -i'
+# alias rm='rm -i'
 
 # Navigation aliases
 alias ..="cd .."
@@ -97,3 +97,9 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # composer
 export PATH="$HOME/.composer/vendor/bin:$PATH"
+
+# bat
+export BAT_THEME="OneHalfDark"
+
+# Starship
+eval "$(starship init zsh)"

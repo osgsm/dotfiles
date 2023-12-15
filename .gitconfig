@@ -1,8 +1,10 @@
 [user]
 	name = osgsm
 	email = 50955473+osgsm@users.noreply.github.com
+
 [core]
 	excludesfile = /Users/osgsm/.gitignore_global
+
 [alias]
 	ad = add -u
 	br = branch
@@ -16,3 +18,25 @@
 	s = status -s
 	sw = switch
 	swc = switch -c
+
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    features = side-by-side line-numbers decorations
+    minus-style = auto "#52272A"
+    plus-style = syntax "#3C4437"
+
+[delta "decorations"]
+    file-decoration-style = none
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+
+

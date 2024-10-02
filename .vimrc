@@ -21,6 +21,14 @@ syntax on
 set termguicolors
 colorscheme onedark
 
+" Transparent background
+hi Normal guibg=NONE
+hi LineNr guibg=NONE
+hi VertSplit guibg=NONE
+hi Special guibg=NONE
+hi Identifier guibg=NONE
+
+
 " Use spaces to insert a <Tab>
 set expandtab
 

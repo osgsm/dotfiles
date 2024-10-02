@@ -39,6 +39,20 @@ alias g="git"
 
 # pnpm aliases
 alias pn="pnpm"
+alias pni="pnpm install"
+alias pnid="pnpm install --save-dev"
+alias pnig="pnpm install -g"
+alias pnun="pnpm uninstall"
+alias pnung="pnpm uninstall -g"
+alias pnl="pnpm list --depth=0"
+alias pnu="pnpm update"
+alias pnug="pnpm update-g"
+alias pno="pnpm outdated"
+alias pnr="pnpm run"
+alias pnrd="pnpm run dev"
+alias pnrb="pnpm run build"
+alias pnrs="pnpm run start"
+alias pnrp="pnpm run preview"
 
 # Yarn aliases
 alias y="yarn"
@@ -71,17 +85,18 @@ alias nr="npm run"
 alias nrd="npm run dev"
 alias nrb="npm run build"
 alias nrs="npm run start"
+alias nrp="npm run preview"
 
 # zsh-completions
 if type brew &>/dev/null; then
-	FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-
-	autoload -Uz compinit
-	compinit
+ 	FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+ 
+ 	autoload -Uz compinit
+ 	compinit
 fi
 
 # zsh-autosuggestions
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # set vim key bind
 bindkey -v
@@ -110,3 +125,9 @@ export BAT_THEME="OneHalfDark"
 
 # Starship
 eval "$(starship init zsh)"
+
+# flutter
+export PATH="$HOME/flutter/bin:$PATH"
+
+# VS Code
+export COREPACK_ENABLE_AUTO_PIN=0

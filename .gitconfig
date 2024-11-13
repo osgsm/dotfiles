@@ -18,6 +18,7 @@
 	s = status -s
 	sw = switch
 	swc = switch -c
+  undo = reset @~
 
 [core]
     pager = delta

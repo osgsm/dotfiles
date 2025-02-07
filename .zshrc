@@ -131,3 +131,18 @@ export PATH="$HOME/flutter/bin:$PATH"
 
 # VS Code
 export COREPACK_ENABLE_AUTO_PIN=0
+
+# pnpm
+export PNPM_HOME="/Users/osgsm/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# GitHub CLI
+prco () {
+    gh pr list;
+    echo "Type the number of PR to checkout: " && read number;
+    gh pr checkout ${number};
+}

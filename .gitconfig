@@ -21,24 +21,24 @@
   undo = reset @~
 
 [core]
-    pager = delta
+  pager = delta
 
 [interactive]
-    diffFilter = delta --color-only
+  diffFilter = delta --color-only
 
 [delta]
-    features = side-by-side line-numbers decorations
-    minus-style = auto "#52272A"
-    plus-style = syntax "#3C4437"
+  features = side-by-side line-numbers decorations
+  minus-style = auto "#52272A"
+  plus-style = syntax "#3C4437"
 
 [delta "decorations"]
-    file-decoration-style = none
+  file-decoration-style = none
 
 [merge]
-    conflictstyle = diff3
+  conflictstyle = diff3
 
 [diff]
-    colorMoved = default
+  colorMoved = default
 
 
 [filter "lfs"]

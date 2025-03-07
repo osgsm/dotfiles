@@ -146,3 +146,8 @@ prco () {
     echo "Type the number of PR to checkout: " && read number;
     gh pr checkout ${number};
 }
+
+ginit () {
+    git init && git add . && git status && git commit -m "First commit" && git branch -M main;
+    gh repo create;
+}

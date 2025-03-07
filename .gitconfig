@@ -15,7 +15,8 @@
 	pl = "!git pull origin $(git rev-parse --abbrev-ref HEAD)"
 	rs = restore
 	rss = restore --staged
-	s = status -s
+	s = status
+	ss = status -s
 	sw = switch
 	swc = switch -c
   undo = reset @~

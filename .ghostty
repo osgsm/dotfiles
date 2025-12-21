@@ -1,0 +1,20 @@
+theme = GitHub Dark
+font-size = 16
+font-family = Moralerspace Neon HW
+font-thicken = true
+adjust-cell-height = 2
+adjust-cell-width = 1
+background-opacity = 0.9
+background-blur = true
+window-padding-x = 10
+window-padding-y = 10
+window-inherit-working-directory = true
+window-save-state = always
+macos-titlebar-style = tabs
+macos-window-buttons = hidden
+keybind = alt+shift+h=goto_split:next
+keybind = alt+shift+l=goto_split:previous
+keybind = alt+shift+j=goto_split:next
+keybind = alt+shift+k=goto_split:previous
+keybind = cmd+ctrl+s=new_split:auto
+

@@ -160,4 +160,4 @@ ginit () {
 }
 
 # mise
-eval "$(~/.local/bin/mise activate zsh)"
+eval "$(mise activate zsh)"

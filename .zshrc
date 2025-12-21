@@ -35,6 +35,7 @@ alias -- -="cd -"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/Projects"
+alias w="cd ~/workspace"
 alias g="git"
 
 # pnpm aliases

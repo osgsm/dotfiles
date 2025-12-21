@@ -157,3 +157,6 @@ ginit () {
     git init && git add . && git status && git commit -m "First commit" && git branch -M main;
     gh repo create;
 }
+
+# mise
+eval "$(~/.local/bin/mise activate zsh)"

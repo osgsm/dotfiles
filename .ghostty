@@ -1,9 +1,9 @@
 theme = GitHub Dark
-font-size = 16
+font-size = 15
 font-family = Moralerspace Neon 
 font-thicken = true
-adjust-cell-height = 2
-background-opacity = 0.8
+adjust-cell-height = 26%
+background-opacity = 0.9
 window-padding-x = 12
 window-padding-y = 10
 window-inherit-working-directory = true

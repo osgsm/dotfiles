@@ -1,18 +1,20 @@
-theme = GitHub Dark
-font-size = 15
-font-family = Moralerspace Neon 
-font-thicken = true
-adjust-cell-height = 20%
-background-opacity = 0.9
-window-padding-x = 12
-window-padding-y = 10
+copy-on-select = true
+window-subtitle = working-directory
 window-inherit-working-directory = true
 window-save-state = always
-macos-titlebar-style = tabs
-macos-window-buttons = hidden
+window-padding-x = 12
+window-padding-y = 10
+background-opacity = 0.9
+background-blur = 20
+theme = GitHub Dark
+selection-background = #cccccc
+font-size = 15
+font-thicken = true
+font-family = Moralerspace Neon
+adjust-cell-height = 20%
 keybind = alt+shift+h=goto_split:next
 keybind = alt+shift+l=goto_split:previous
 keybind = alt+shift+j=goto_split:next
 keybind = alt+shift+k=goto_split:previous
 keybind = cmd+ctrl+s=new_split:auto
-
+macos-titlebar-style = tabs

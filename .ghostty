@@ -12,6 +12,7 @@ font-size = 15
 font-thicken = true
 font-family = Moralerspace Neon HW
 adjust-cell-height = 5%
+adjust-cell-width = 5%
 keybind = alt+shift+h=goto_split:next
 keybind = alt+shift+l=goto_split:previous
 keybind = alt+shift+j=goto_split:next

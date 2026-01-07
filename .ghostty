@@ -10,11 +10,12 @@ theme = GitHub Dark
 selection-background = #cccccc
 font-size = 15
 font-thicken = true
-font-family = Moralerspace Neon
-adjust-cell-height = 20%
+font-family = Moralerspace Neon HW
+adjust-cell-height = 5%
 keybind = alt+shift+h=goto_split:next
 keybind = alt+shift+l=goto_split:previous
 keybind = alt+shift+j=goto_split:next
 keybind = alt+shift+k=goto_split:previous
 keybind = cmd+ctrl+s=new_split:auto
 macos-titlebar-style = tabs
+

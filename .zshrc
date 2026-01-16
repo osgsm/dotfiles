@@ -147,6 +147,19 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+# mise
+eval "$(mise activate zsh)"
+
+# Custom commands
+dev() {
+  cd "$1" && nvim -c "lua vim.defer_fn(function() 
+    Snacks.terminal.open(nil, { win = { position = 'bottom', height = 0.3 } })
+    vim.defer_fn(function() 
+      Snacks.explorer.open()
+    end, 100)
+  end, 100)"
+}
+
 # GitHub CLI
 prco () {
     gh pr list;
@@ -159,5 +172,3 @@ ginit () {
     gh repo create;
 }
 
-# mise
-eval "$(mise activate zsh)"

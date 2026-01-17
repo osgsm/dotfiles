@@ -1,8 +1,5 @@
-
 # Kiro CLI pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
-
-
 
 export EDITOR=vim
 export LANG="ja_JP.UTF-8"
@@ -43,6 +40,9 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/Projects"
 alias ws="cd ~/workspace"
+alias o="cd ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/osgsm\'s\ second\ brain"
+alias nv="cd ~/.config/nvim"
+alias dot="cd ~/dotfiles"
 alias g="git"
 
 # pnpm aliases
@@ -158,7 +158,7 @@ esac
 eval "$(mise activate zsh)"
 
 # Custom commands
-dev() {
+dev () {
   cd "$1" && nvim -c "lua vim.defer_fn(function() 
     Snacks.terminal.open(nil, { win = { position = 'bottom', height = 0.3 } })
     vim.defer_fn(function() 
@@ -183,7 +183,6 @@ ginit () {
 precmd() {
   echo -ne "\033]0;${PWD/#$HOME/~}\007"
 }
-
 
 # Kiro CLI post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"

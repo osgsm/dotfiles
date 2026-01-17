@@ -1,3 +1,9 @@
+
+# Kiro CLI pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
+
+
+
 export EDITOR=vim
 export LANG="ja_JP.UTF-8"
 export LC_COLLATE="ja_JP.UTF-8"
@@ -6,6 +12,7 @@ export LC_MESSAGES="ja_JP.UTF-8"
 export LC_MONETARY="ja_JP.UTF-8"
 export LC_NUMERIC="ja_JP.UTF-8"
 export LC_TIME="ja_JP.UTF-8"
+export PATH="$HOME/.local/bin:$PATH"
 
 PS1='%~ %# '
 
@@ -97,13 +104,13 @@ alias nrp="nr preview"
 # zsh-completions
 if type brew &>/dev/null; then
  	FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
- 
+
  	autoload -Uz compinit
  	compinit
 fi
 
 # zsh-autosuggestions
- source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # set vim key bind
 bindkey -v
@@ -172,3 +179,11 @@ ginit () {
     gh repo create;
 }
 
+# Change terminal title to current directory
+precmd() {
+  echo -ne "\033]0;${PWD/#$HOME/~}\007"
+}
+
+
+# Kiro CLI post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"

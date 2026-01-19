@@ -101,13 +101,11 @@ alias nrb="nr build"
 alias nrs="nr start"
 alias nrp="nr preview"
 
-# zsh-completions
-if type brew &>/dev/null; then
- 	FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-
- 	autoload -Uz compinit
- 	compinit
-fi
+# carapace for auto-completion
+autoload -U compinit && compinit
+export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
+zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+source <(carapace _carapace)
 
 # zsh-autosuggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh

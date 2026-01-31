@@ -12,7 +12,7 @@ keybind = ctrl+down=resize_split:down,10
 keybind = ctrl+arrow_up=resize_split:up,10
 keybind = ctrl+arrow_left=resize_split:left,10
 keybind = ctrl+arrow_right=resize_split:right,10
-macos-option-as-alt = true
+macos-option-as-alt = right
 quick-terminal-position = right
 theme = Catppuccin Mocha
 window-subtitle = working-directory

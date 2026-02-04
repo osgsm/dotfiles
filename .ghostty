@@ -8,10 +8,10 @@ font-thicken = true
 font-family = Moralerspace Neon HW
 keybind = global:cmd+backquote=toggle_quick_terminal
 keybind = ctrl+cmd+s=new_split:auto
-keybind = ctrl+down=resize_split:down,10
-keybind = ctrl+arrow_up=resize_split:up,10
-keybind = ctrl+arrow_left=resize_split:left,10
-keybind = ctrl+arrow_right=resize_split:right,10
+keybind = ctrl+alt+down=resize_split:down,10
+keybind = ctrl+alt+arrow_up=resize_split:up,10
+keybind = ctrl+alt+arrow_left=resize_split:left,10
+keybind = ctrl+alt+arrow_right=resize_split:right,10
 macos-option-as-alt = true
 quick-terminal-position = right
 theme = Catppuccin Mocha

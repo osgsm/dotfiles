@@ -14,9 +14,9 @@ config.initial_rows = 28
 
 -- or, changing the font size and color scheme.
 config.font_size = 15
-config.font = wezterm.font("Moralerspace Neon HW", { weight = "Regular" })
+config.font = wezterm.font("Moralerspace Neon", { weight = "Regular" })
 config.line_height = 1.2
-config.cell_width = 1.05
+config.cell_width = 0.9
 
 config.color_scheme = "Catppuccin Mocha"
 

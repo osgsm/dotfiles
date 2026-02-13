@@ -1,6 +1,3 @@
-# Kiro CLI pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
-
 export EDITOR=vim
 export LANG="ja_JP.UTF-8"
 export LC_COLLATE="ja_JP.UTF-8"
@@ -182,6 +179,3 @@ ginit () {
 precmd() {
   echo -ne "\033]0;${PWD/#$HOME/~}\007"
 }
-
-# Kiro CLI post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"

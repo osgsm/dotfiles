@@ -9,13 +9,13 @@ local act = wezterm.action
 -- This is where you actually apply your config choices.
 
 -- For example, changing the initial geometry for new windows:
-config.initial_cols = 120
-config.initial_rows = 28
+config.initial_cols = 80
+config.initial_rows = 20
 
 -- or, changing the font size and color scheme.
 config.font_size = 15
 config.font = wezterm.font("Moralerspace Neon", { weight = "Regular" })
-config.line_height = 1.2
+config.line_height = 1.25
 config.cell_width = 0.9
 
 config.color_scheme = "Catppuccin Mocha"

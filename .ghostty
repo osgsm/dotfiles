@@ -13,7 +13,7 @@ keybind = ctrl+alt+arrow_left=resize_split:left,10
 keybind = ctrl+alt+arrow_right=resize_split:right,10
 macos-option-as-alt = right
 quick-terminal-position = right
-theme = Catppuccin Mocha
+theme = Blue Matrix
 window-subtitle = working-directory
 window-inherit-working-directory = true
 window-save-state = always

@@ -1,11 +1,10 @@
-adjust-cell-height = 10%
-adjust-cell-width = 5%
+adjust-cell-height = 20%
+adjust-cell-width = -8%
 background-opacity = 1
 background-blur = 20
 copy-on-select = clipboard
 font-size = 15
-font-thicken = true
-font-family = Moralerspace Neon HW
+font-family = Moralerspace Neon
 keybind = global:cmd+backquote=toggle_quick_terminal
 keybind = ctrl+cmd+s=new_split:auto
 keybind = ctrl+alt+down=resize_split:down,10
@@ -20,5 +19,4 @@ window-inherit-working-directory = true
 window-save-state = always
 window-padding-x = 10
 window-padding-y = 10
-# macos-titlebar-style = tabs
 

@@ -17,6 +17,6 @@ theme = Blue Matrix
 window-subtitle = working-directory
 window-inherit-working-directory = true
 window-save-state = always
-window-padding-x = 10
+window-padding-x = 15,20
 window-padding-y = 10
 

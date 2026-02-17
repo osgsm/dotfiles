@@ -20,7 +20,7 @@ config.cell_width = 0.9
 
 config.color_scheme = "Catppuccin Mocha"
 
---Hide window decorations (close, minimize, maximize buttons)
+-- Hide window decorations (close, minimize, maximize buttons)
 config.window_decorations = "RESIZE"
 
 -- See https://wezterm.org/changelog.html?h=send_compo#20200718-095447-d2315640
@@ -32,8 +32,8 @@ config.window_frame = {
 	inactive_titlebar_bg = "transparent",
 	active_titlebar_bg = "transparent",
 }
-config.hide_tab_bar_if_only_one_tab = true
-config.show_new_tab_button_in_tab_bar = false
+config.hide_tab_bar_if_only_one_tab = false
+config.show_new_tab_button_in_tab_bar = true
 
 -- Show which key table is active in the status area
 wezterm.on("update-right-status", function(window, pane)

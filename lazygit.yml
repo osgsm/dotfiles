@@ -1,0 +1,13 @@
+gui:
+  language: 'en'
+  theme:
+    activeBorderColor:
+      - red
+    inactiveBorderColor:
+      - red
+    optionsTextColor:
+      - red
+git:
+  pagers:
+    - colorArg: always
+      pager: delta --dark --paging=never

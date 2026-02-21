@@ -78,7 +78,27 @@ config.keys = {
 			size = { Percent = 50 },
 		}),
 	},
-	-- CTRL+SHIFT+Space, followed by 'r' will put us in resize-pane
+	{
+		key = "h",
+		mods = "LEADER",
+		action = act.ActivatePaneDirection("Left"),
+	},
+	{
+		key = "j",
+		mods = "LEADER",
+		action = act.ActivatePaneDirection("Down"),
+	},
+	{
+		key = "k",
+		mods = "LEADER",
+		action = act.ActivatePaneDirection("Up"),
+	},
+	{
+		key = "l",
+		mods = "LEADER",
+		action = act.ActivatePaneDirection("Right"),
+	},
+	-- CTRL+b, followed by 'r' will put us in resize-pane
 	-- mode until we cancel that mode.
 	{
 		key = "r",
@@ -89,7 +109,7 @@ config.keys = {
 		}),
 	},
 
-	-- CTRL+SHIFT+Space, followed by 'a' will put us in activate-pane
+	-- CTRL+b, followed by 'a' will put us in activate-pane
 	-- mode until we press some other key or until 1 second (1000ms)
 	-- of time elapses
 	{
@@ -100,7 +120,19 @@ config.keys = {
 			timeout_milliseconds = 1000,
 		}),
 	},
+
+	-- CTRL+b, followed by 's' will put us in scroll-pane
+	-- mode until we cancel that mode.
+	{
+		key = "s",
+		mods = "LEADER",
+		action = act.ActivateKeyTable({
+			name = "scroll_pane",
+			one_shot = false,
+		}),
+	},
 }
+
 config.key_tables = {
 	-- Defines the keys that are active in our resize-pane mode.
 	-- Since we're likely to want to make multiple adjustments,
@@ -140,6 +172,17 @@ config.key_tables = {
 
 		{ key = "DownArrow", action = act.ActivatePaneDirection("Down") },
 		{ key = "j", action = act.ActivatePaneDirection("Down") },
+	},
+
+	-- Defines the keys that are active in our scroll-pane mode.
+	-- 'scroll_pane' here corresponds to the name="ascroll_pane" in
+	-- the key assignments above.
+	scroll_pane = {
+		{ key = "j", action = act.ScrollByPage(1) },
+		{ key = "k", action = act.ScrollByPage(-1) },
+
+		-- Cancel the mode by pressing escape
+		{ key = "Escape", action = "PopKeyTable" },
 	},
 }
 

@@ -9,6 +9,10 @@ keybind = global:cmd+backquote=toggle_quick_terminal
 keybind = ctrl+cmd+s=new_split:auto
 keybind = ctrl+cmd+shift+u=scroll_page_fractional:-0.5
 keybind = ctrl+cmd+shift+d=scroll_page_fractional:0.5
+keybind = ctrl+cmd+shift+h=goto_split:left
+keybind = ctrl+cmd+shift+j=goto_split:down
+keybind = ctrl+cmd+shift+k=goto_split:up
+keybind = ctrl+cmd+shift+l=goto_split:right
 keybind = ctrl+alt+down=resize_split:down,10
 keybind = ctrl+alt+arrow_up=resize_split:up,10
 keybind = ctrl+alt+arrow_left=resize_split:left,10

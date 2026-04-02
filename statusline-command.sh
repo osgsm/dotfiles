@@ -57,20 +57,54 @@ if [ -n "$used" ]; then
   fi
   context_part="${MAGENTA}󰧑 ${bar_color}${bar}${RESET} ${used}%"
 else
-  context_part="${MAGENTA}󰧑 ${WHITE}░░░░░░░░░░${RESET} -%"
+  context_part="${MAGENTA}󰧑 ${WHITE}░░░░░░░░░░${RESET} 0%"
 fi
 
-# Rate limit reset time
-reset_hour=$(date -v+1H +%H:00 2>/dev/null || date -d '+1 hour' +%H:00 2>/dev/null)
-reset_part="${WHITE}󰔛 ${reset_hour}${RESET}"
+# Rate limit info
+five_hour_reset=$(echo "$input" | jq -r '.rate_limits.five_hour.resets_at // empty')
+five_hour_used=$(echo "$input" | jq -r '.rate_limits.five_hour.used_percentage // empty')
+seven_day_reset=$(echo "$input" | jq -r '.rate_limits.seven_day.resets_at // empty')
+seven_day_used=$(echo "$input" | jq -r '.rate_limits.seven_day.used_percentage // empty')
+
+rate_color() {
+  local pct="${1:-0}"
+  if [ "$pct" -ge 80 ] 2>/dev/null; then
+    printf "%s" "$RED"
+  elif [ "$pct" -ge 60 ] 2>/dev/null; then
+    printf "%s" "$YELLOW"
+  else
+    printf "%s" "$GREEN"
+  fi
+}
+
+five_hour_part=""
+if [ -n "$five_hour_reset" ]; then
+  five_hour_time=$(date -r "$five_hour_reset" +%H:%M 2>/dev/null || date -d "@$five_hour_reset" +%H:%M 2>/dev/null)
+  five_hour_color=$(rate_color "$five_hour_used")
+  five_hour_part="${WHITE}5h ${five_hour_color}${five_hour_used:-0}%${WHITE} ${five_hour_time}"
+else
+  five_hour_part="${WHITE}5h ${GREEN}0%${WHITE} --:--"
+fi
+
+seven_day_part=""
+if [ -n "$seven_day_reset" ]; then
+  seven_day_time=$(date -r "$seven_day_reset" +"%m/%d %H:%M" 2>/dev/null || date -d "@$seven_day_reset" +"%m/%d %H:%M" 2>/dev/null)
+  seven_day_color=$(rate_color "$seven_day_used")
+  seven_day_part="${WHITE}7d ${seven_day_color}${seven_day_used:-0}%${WHITE} ${seven_day_time}"
+else
+  seven_day_part="${WHITE}7d ${GREEN}0%${WHITE} --"
+fi
+
+rate_limit_part="${WHITE}󰔛 ${five_hour_part}  ${seven_day_part}${RESET}"
 
 # Model
 model_part="${BLUE}󱜚 ${model}${RESET}"
 
-# Line 2: git info (repo | branch  diff), Line 3: context  reset  model
+# Line 2: git info, Line 3: context + model, Line 4: rate limit resets
 if [ -n "$repo_name" ]; then
   printf "  ${YELLOW}󰳏 %s${RESET} ${GREEN} %s${RESET}  %b\n" "$repo_name" "$branch_name" "$diff_part"
-  printf "  %b  %b  %b\n" "$context_part" "$reset_part" "$model_part"
+  printf "  %b  %b\n" "$context_part" "$model_part"
 else
-  printf "  %b  %b  %b\n" "$context_part" "$reset_part" "$model_part"
+  printf "  %b  %b\n" "$context_part" "$model_part"
 fi
+printf "  %b\n" "$rate_limit_part"

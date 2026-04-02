@@ -28,7 +28,7 @@ repo_name=""
 branch_name=""
 diff_part=""
 
-if git -C "$cwd" rev-parse --git-dir > /dev/null 2>&1; then
+if git -C "$cwd" rev-parse --git-dir >/dev/null 2>&1; then
   repo_name=$(basename "$(git -C "$cwd" rev-parse --show-toplevel 2>/dev/null)" 2>/dev/null)
   branch_name=$(git -C "$cwd" symbolic-ref --short HEAD 2>/dev/null || git -C "$cwd" rev-parse --short HEAD 2>/dev/null)
   diff_count=$(git -C "$cwd" --no-optional-locks status --porcelain 2>/dev/null | wc -l | tr -d ' ')
@@ -46,7 +46,7 @@ if [ -n "$used" ]; then
   empty=$((10 - filled))
   bar=""
   for i in $(seq 1 $filled); do bar="${bar}█"; done
-  for i in $(seq 1 $empty);  do bar="${bar}░"; done
+  for i in $(seq 1 $empty); do bar="${bar}░"; done
   # Color bar based on usage level
   if [ "$filled" -ge 8 ]; then
     bar_color="$RED"
@@ -69,7 +69,7 @@ model_part="${BLUE}󱜚 ${model}${RESET}"
 
 # Line 2: git info (repo | branch  diff), Line 3: context  reset  model
 if [ -n "$repo_name" ]; then
-  printf "  ${YELLOW}󰳏 %s${RESET} | ${GREEN} %s${RESET}  %b\n" "$repo_name" "$branch_name" "$diff_part"
+  printf "  ${YELLOW}󰳏 %s${RESET} ${GREEN} %s${RESET}  %b\n" "$repo_name" "$branch_name" "$diff_part"
   printf "  %b  %b  %b\n" "$context_part" "$reset_part" "$model_part"
 else
   printf "  %b  %b  %b\n" "$context_part" "$reset_part" "$model_part"

@@ -55,7 +55,8 @@ if [ -n "$used" ]; then
   else
     bar_color="$GREEN"
   fi
-  context_part="${MAGENTA}󰧑 ${bar_color}${bar}${RESET} ${used}%"
+  used_rounded=$(printf '%.1f' "$used")
+  context_part="${MAGENTA}󰧑 ${bar_color}${bar}${RESET} ${used_rounded}%"
 else
   context_part="${MAGENTA}󰧑 ${WHITE}░░░░░░░░░░${RESET} 0%"
 fi
@@ -68,9 +69,10 @@ seven_day_used=$(echo "$input" | jq -r '.rate_limits.seven_day.used_percentage /
 
 rate_color() {
   local pct="${1:-0}"
-  if [ "$pct" -ge 80 ] 2>/dev/null; then
+  local int_pct=$(printf '%.0f' "$pct")
+  if [ "$int_pct" -ge 80 ] 2>/dev/null; then
     printf "%s" "$RED"
-  elif [ "$pct" -ge 60 ] 2>/dev/null; then
+  elif [ "$int_pct" -ge 60 ] 2>/dev/null; then
     printf "%s" "$YELLOW"
   else
     printf "%s" "$GREEN"
@@ -81,7 +83,8 @@ five_hour_part=""
 if [ -n "$five_hour_reset" ]; then
   five_hour_time=$(date -r "$five_hour_reset" +%H:%M 2>/dev/null || date -d "@$five_hour_reset" +%H:%M 2>/dev/null)
   five_hour_color=$(rate_color "$five_hour_used")
-  five_hour_part="${WHITE}5h ${five_hour_color}${five_hour_used:-0}%${WHITE} ${five_hour_time}"
+  five_hour_rounded=$(printf '%.1f' "${five_hour_used:-0}")
+  five_hour_part="${WHITE}5h ${five_hour_color}${five_hour_rounded}%${WHITE} ${five_hour_time}"
 else
   five_hour_part="${WHITE}5h ${GREEN}0%${WHITE} --:--"
 fi
@@ -90,7 +93,8 @@ seven_day_part=""
 if [ -n "$seven_day_reset" ]; then
   seven_day_time=$(date -r "$seven_day_reset" +"%m/%d %H:%M" 2>/dev/null || date -d "@$seven_day_reset" +"%m/%d %H:%M" 2>/dev/null)
   seven_day_color=$(rate_color "$seven_day_used")
-  seven_day_part="${WHITE}7d ${seven_day_color}${seven_day_used:-0}%${WHITE} ${seven_day_time}"
+  seven_day_rounded=$(printf '%.1f' "${seven_day_used:-0}")
+  seven_day_part="${WHITE}7d ${seven_day_color}${seven_day_rounded}%${WHITE} ${seven_day_time}"
 else
   seven_day_part="${WHITE}7d ${GREEN}0%${WHITE} --"
 fi

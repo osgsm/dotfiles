@@ -155,12 +155,33 @@ eval "$(mise activate zsh)"
 
 # Custom commands
 dev () {
-  cd "$1" && nvim -c "lua vim.defer_fn(function() 
-    Snacks.terminal.open(nil, { win = { position = 'bottom', height = 0.3 } })
-    vim.defer_fn(function() 
+  local server=false
+  local dir=""
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      -s) server=true; shift ;;
+      *) dir="$1"; shift ;;
+    esac
+  done
+  if [[ -z "$dir" ]]; then
+    dir="."
+  fi
+  if $server; then
+    cd "$dir" && nvim -c "lua vim.defer_fn(function()
+      local term = Snacks.terminal.open(nil, { win = { position = 'bottom', height = 0.3 } })
+      vim.defer_fn(function()
+        local chan = vim.bo[term.buf].channel
+        vim.api.nvim_chan_send(chan, 'nrd\n')
+      end, 100)
+      vim.defer_fn(function()
+        Snacks.explorer.open()
+      end, 100)
+    end, 100)"
+  else
+    cd "$dir" && nvim -c "lua vim.defer_fn(function()
       Snacks.explorer.open()
-    end, 100)
-  end, 100)"
+    end, 100)"
+  fi
 }
 
 # GitHub CLI

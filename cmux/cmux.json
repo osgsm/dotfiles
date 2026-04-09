@@ -1,0 +1,34 @@
+{
+  "commands": [
+    {
+      "name": "Dev Layout",
+      "description": "Neovim + Claude Code ×2",
+      "keywords": [
+        "dev",
+        "layout"
+      ],
+      "command": "~/.config/cmux/scripts/dev-layout.sh"
+    },
+    {
+      "name": "Web Dev Layout",
+      "description": "Neovim + Claude Code ×2 + Browser preview",
+      "keywords": [
+        "web",
+        "dev",
+        "layout"
+      ],
+      "command": "~/.config/cmux/scripts/web-dev-layout.sh"
+    },
+    {
+      "name": "Detect Dev URL",
+      "description": "Detect dev server URL and open it in the browser",
+      "keywords": [
+        "url",
+        "detect",
+        "browser",
+        "dev"
+      ],
+      "command": "~/.config/cmux/scripts/detect-dev-url.sh"
+    }
+  ]
+}

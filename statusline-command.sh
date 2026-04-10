@@ -21,7 +21,7 @@ home_dir="$HOME"
 display_cwd="${cwd/#$home_dir/~}"
 
 # Line 1: current directory
-printf " ${CYAN}󰉋  %s${RESET}\n" "$display_cwd"
+printf " ${CYAN}󰉋 %s${RESET}\n" "$display_cwd"
 
 # Git info
 repo_name=""

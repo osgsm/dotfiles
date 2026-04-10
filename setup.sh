@@ -11,7 +11,7 @@ DOTFILES=$HOME/dotfiles
 # Create symbolic links to $HOME
 HOME_FILES=(zshrc gitconfig vimrc tmux.conf alacritty.yml wezterm.lua)
 for file in ${HOME_FILES[@]}; do
-  ln -s $DOTFILES/$file $HOME/.$file
+  ln -sf $DOTFILES/$file $HOME/.$file
 done
 
 # Create symbolic links to ~/.config/
@@ -25,11 +25,11 @@ for entry in ${CONFIG_FILES[@]}; do
   src=${entry%%:*}
   dest=${entry#*:}
   mkdir -p $HOME/.config/${dest%/*}
-  ln -s $DOTFILES/$src $HOME/.config/$dest
+  ln -sf $DOTFILES/$src $HOME/.config/$dest
 done
 
 # Brewfile
-ln -s $DOTFILES/Brewfile $HOME/.Brewfile
+ln -sf $DOTFILES/Brewfile $HOME/.Brewfile
 
 # Brew install
 brew bundle --global

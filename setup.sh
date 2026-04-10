@@ -28,6 +28,9 @@ for entry in ${CONFIG_FILES[@]}; do
   ln -sf $DOTFILES/$src $HOME/.config/$dest
 done
 
+# .agents (Claude Code skills)
+ln -sf $DOTFILES/agents $HOME/.agents
+
 # Brewfile
 ln -sf $DOTFILES/Brewfile $HOME/.Brewfile
 

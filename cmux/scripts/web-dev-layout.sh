@@ -3,8 +3,16 @@
 
 set -euo pipefail
 
-# --- 1. Split left → run dev (Neovim) ---
+# --- 0. Close all other surfaces in the current workspace ---
 SELF=$(cmux --json identify | jq -r '.caller.surface_ref')
+cmux --json tree | jq -r --arg self "$SELF" '
+  .windows[].workspaces[] | select(.selected) |
+  .panes[].surfaces[] | select(.ref != $self) | .ref
+' | while read -r surf; do
+  cmux close-surface --surface "$surf"
+done
+
+# --- 1. Split left → run dev (Neovim) ---
 S_DEV=$(cmux --json new-split left --surface "$SELF" | jq -r '.surface_ref')
 cmux send --surface "$S_DEV" "dev -s ."
 cmux send-key --surface "$S_DEV" enter

@@ -64,8 +64,8 @@
     //       "Teal" : "#006B6B"
     //     },
     //     "indicatorStyle" : "leftRail",
-    "notificationBadgeColor": "#343794",
-    "selectionColor": "#343794"
+    "notificationBadgeColor": "#344294",
+    "selectionColor": "#344294"
   },
   "sidebarAppearance": {
     "darkModeTintColor": "#0a0b1b",

@@ -30,5 +30,5 @@ fi
 
 echo "🌐 Detected: $URL"
 
-# --- Open URL in the external (system) browser ---
-open "$URL"
+# --- Open URL in Firefox ---
+open -b org.mozilla.firefox "$URL"

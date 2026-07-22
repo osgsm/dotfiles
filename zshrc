@@ -7,6 +7,7 @@ export LC_MONETARY="ja_JP.UTF-8"
 export LC_NUMERIC="ja_JP.UTF-8"
 export LC_TIME="ja_JP.UTF-8"
 export PATH="$HOME/.local/bin:$PATH"
+export EMSDK_QUIET=1
 
 PS1='%~ %# '
 
@@ -200,3 +201,7 @@ ginit () {
 precmd() {
   echo -ne "\033]0;${PWD/#$HOME/~}\007"
 }
+
+# TrussC CLI tab completion
+eval "$(trusscli completion zsh)"
+source $HOME/emsdk/emsdk_env.sh

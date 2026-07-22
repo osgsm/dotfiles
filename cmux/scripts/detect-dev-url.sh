@@ -1,6 +1,6 @@
 #!/bin/bash
 # detect-dev-url.sh
-# Detect the dev server URL and open a browser in the caller's pane
+# Detect the dev server URL and open it in the external (system) browser
 #
 # Usage:
 #   ./detect-dev-url.sh <monitor-surface>
@@ -30,13 +30,5 @@ fi
 
 echo "🌐 Detected: $URL"
 
-# --- Get own surface and pane ---
-SELF=$(cmux --json identify)
-SELF_SURFACE=$(echo "$SELF" | jq -r '.caller.surface_ref')
-SELF_PANE=$(echo "$SELF" | jq -r '.caller.pane_ref')
-
-# --- Open browser in own pane ---
-cmux --json new-surface --type browser --pane "$SELF_PANE" --url "$URL"
-
-# --- Close own terminal ---
-cmux close-surface --surface "$SELF_SURFACE"
+# --- Open URL in the external (system) browser ---
+open "$URL"
